@@ -8,15 +8,21 @@ import { Component, OnInit, VERSION } from '@angular/core';
 export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
 
-  date: Date = new Date();
-
   ngOnInit() {
-    if (this.date.getDay() === 6) {
-      this.date.setDate(this.date.getDate() + 1).toString();
+    let fecha = new Date();
+    console.log(this.moveDate(fecha));
+  }
+
+  moveDate(date) {
+    date.setDate(6);
+    if (date.getDate() === 6) {
+      console.log("ASD 1")
+      date = date.setDate(date.getDate() + 1).toString();
     }
-    if (this.date.getDay() === 0) {
-      this.date.setDate(this.date.getDate() + 1).toString();
-    }
-    console.log(this.date);
+    if (date.getDate() === 0) {
+      console.log("ASD 2")
+      date.setMonth(date.getDate() + 1);
+    } 
+    return date;
   }
 }
