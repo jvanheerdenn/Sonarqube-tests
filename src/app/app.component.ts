@@ -16,13 +16,13 @@ export class AppComponent implements OnInit {
   moveDate(date) {
     date.setDate(6);
     if (date.getDate() === 6) {
-      console.log("ASD 1")
-      date = date.setDate(date.getDate() + 1).toString();
+      console.log('ASD 1');
+      date.setDate(date.getDate() + 1).toString();
     }
     if (date.getDate() === 0) {
-      console.log("ASD 2")
+      console.log('ASD 2');
       date.setMonth(date.getDate() + 1);
-    } 
+    }
     return date;
   }
 }
